@@ -32,6 +32,7 @@ body {
 /* URNA */
 
 .urna {
+  border: 2px solid #000;
   margin: 250px auto;
   background-color: #dbd5c9;
   padding: 30px;
@@ -76,11 +77,14 @@ body {
   background-color: #fff;
   color: #000;
   font-size: 15px;
+  padding: 2px;
 }
 
 .btn-corrige {
   color: #000;
   font-size: 15px;
+  background-color: #f09046;
+  padding: 2px;
 }
 
 .btn-confirma {
@@ -88,6 +92,7 @@ body {
   font-size: 15px;
   width: 90px;
   height: 50px;
+  background-color: #48c079;
 }
 
 .d-1 {
@@ -141,7 +146,35 @@ body {
 }
 
 .d1-right {
-  width: 90px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.d-1-image {
+  text-align: center;
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 10px 0 10px 0;
+  font-size: 14px;
+}
+
+.d-1-image-small {
+  text-align: center;
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 10px 0 10px 0;
+  width: 80%;
+  font-size: 12px;
+}
+
+.d-1-image img {
+  width: 100%;
+}
+
+.d-1-image-small img {
+  width: 100%;
 }
 
 .d-2 {
