@@ -99,7 +99,7 @@ body {
   display: flex;
 }
 
-.d1-left {
+.d-1-left {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -144,7 +144,7 @@ body {
   line-height: 30px;
 }
 
-.d1-right {
+.d-1-right {
   width: 100px;
   display: flex;
   flex-direction: column;
