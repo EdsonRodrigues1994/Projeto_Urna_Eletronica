@@ -9,7 +9,7 @@ let etapas = [
         partido: "ABC",
         fotos: [
           {
-            url: "prefeito1.jpg", legenda: "Vereador"
+            url: "/img/prefeito1.jpg", legenda: "Vereador"
           }
         ]
       },
@@ -19,7 +19,7 @@ let etapas = [
         partido: "DEFG",
         fotos:[
           {
-            url: "prefeito2.jpg", legenda: "Vereador"
+            url: "/img/prefeito2.jpg", legenda: "Vereador"
           }
         ]
       },
@@ -36,10 +36,10 @@ let etapas = [
         vice: "Cic",
         fotos:[
           {
-            url: "prefeito3.jpg", legenda: "Prefeito"
+            url: "/img/prefeito3.jpg", legenda: "Prefeito"
           },
           {
-            url: "prefeito4.jpg", legenda: "Vice-Prefeito", small: true
+            url: "/img/prefeito4.jpg", legenda: "Vice-Prefeito", small: true
           }
         ]
       },
@@ -50,10 +50,10 @@ let etapas = [
         vice: "Zul",
         fotos:[
           {
-            url: "prefeito1.jpg", legenda: "Prefeito"
+            url: "/img/prefeito1.jpg", legenda: "Prefeito"
           },
           {
-            url: "prefeito2.jpg", legenda: "Vice-Prefeito",small: true
+            url: "/img/prefeito2.jpg", legenda: "Vice-Prefeito",small: true
           }
         ]
       },

@@ -20,18 +20,36 @@ function comecarEtapa(){
     }
   }
 
-  seuVotoPara.innerHTML = "";
+  seuVotoPara.style.display = "none";
   cargo.innerHTML = etapa.titulo.toUpperCase();
   descricao.innerHTML = "";
-  aviso.innerHTML ="";
+  aviso.style.display = "none";
   lateral.innerHTML ="";
   numeros.innerHTML = numeroHtml;
 };
 
 function atualizaInterface(){
-  console.log("Atualizando inteface");
-  console.log(numero);
+  let etapa = etapas[etapaAtual];
+  let candidato = etapa.candidatos.filter((item) =>{
+    if (item.numero === numero){
+      return true;
+    } else{
+      return false;
+    }
+  });
+  if(candidato.length > 0){
+    candidato = candidato[0];
+    seuVotoPara.style.display = "block";
+    aviso.style.display = "block";
+    descricao.innerHTML = `Nome: ${candidato.nome} <br/> Partido: ${candidato.partido}`;
 
+    let fotosHtml = "";
+    for (let i in candidato.fotos){
+      fotosHtml += `<div class="d-1-image"> <img src="${candidato.fotos[i].url}" alt=""> <p>${candidato.fotos[i].legenda}</p> </div>`
+    }
+
+    lateral.innerHTML = fotosHtml;
+  }
 };
 
 function clicou(event){
