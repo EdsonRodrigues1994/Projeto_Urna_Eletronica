@@ -7,10 +7,14 @@ const numeros = document.querySelector(".d-1-3");
 
 let etapaAtual = 0;
 let numero = "";
+let votoBranco = false;
+let votos = [];
 
 function comecarEtapa(){
   let etapa = etapas[etapaAtual];
   let numeroHtml = "";
+  numero = "";
+  votoBranco = false;
 
   for(let i = 0; i < etapa.numeros; i++){
     if(i === 0){
@@ -49,6 +53,10 @@ function atualizaInterface(){
     }
 
     lateral.innerHTML = fotosHtml;
+  }else{
+    seuVotoPara.style.display = "block";
+    aviso.style.display = "block";  
+    descricao.innerHTML = "<div class='aviso-grande pisca'>VOTO NULO</div>"
   }
 };
 
@@ -68,16 +76,51 @@ function clicou(event){
 };
 
 function branco(){
-  console.log("branco");
+  if (numero === ""){
+    votoBranco = true;
+    seuVotoPara.style.display = "block";
+    aviso.style.display = "block";  
+    numeros.innerHTML = "";
+    descricao.innerHTML = "<div class='aviso-grande pisca'>VOTO EM BRANCO</div>"
+  }else{
+    numeros.innerHTML = "";
+    descricao.innerHTML = "<div class ='voto-branco pisca'>Para votar NULO os campos não podem ser preenchidos. Aperte CORRIGE para voltar.</div>"
+  }
 };
 
 function corrige(){
-  console.log("corrige");
+  comecarEtapa();
 };
 
 function confirma(){
-  console.log("confirma");
-};
+  let etapa = etapas[etapaAtual];
+  let votoConfirmado = false;
 
+  if (votoBranco === true){
+    votoConfirmado = true;
+    console.log("Confirmando voto em BRANCO");
+    votos.push({
+      etapa: etapas[etapaAtual].titulo,
+      voto: "branco"
+    });
+  }else if(numeros.length === etapa.numero){
+    votoConfirmado = true;
+    console.log(`Confirmando voto ${numero}`)
+    votos.push({
+      etapa: etapas[etapaAtual].titulo,
+      voto: numero
+    });
+  }
+
+  if (votoConfirmado){
+    etapaAtual++;
+    if(etapas[etapaAtual] !== undefined){
+      comecarEtapa()
+    }else{
+      document.querySelector(".tela").innerHTML = "<div class='aviso-gigante '>FIM!</div>"
+      console.log(votos)
+    }
+  }
+};
 
 comecarEtapa();
